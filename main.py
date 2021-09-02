@@ -1,6 +1,6 @@
 from flask import *  
 app = Flask(__name__)  
-  
+import pyfiglet
   
 @app.route('/')  
 def home():
@@ -15,4 +15,6 @@ def postmethod():
     return jsonify(data)
 
 if __name__ == '__main__':  
-   app.run(debug = True)  
+    print( "\033[96m" + pyfiglet.figlet_format("Location Tracker") + "\033[00m")
+    print("\033[92m {}\033[00m\033[91m {}\033[00m".format('Developed by','Gaurav Konde'))
+    app.run(debug = True)  
